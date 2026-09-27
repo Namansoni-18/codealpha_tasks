@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <main>
+    <h1>Calculator</h1>
+
+    <div class="calculator">
+      <div class="screen">
+        <div id="expression">0</div>
+        <output id="result" aria-live="polite">0</output>
+      </div>
+
+      <div class="buttons">
+        <button class="clear" data-key="clear">AC</button>
+        <button data-key="delete" aria-label="Delete">⌫</button>
+        <button data-key="%" aria-label="Percent">%</button>
+        <button class="operator" data-key="/">÷</button>
+
+        <button data-key="7">7</button>
+        <button data-key="8">8</button>
+        <button data-key="9">9</button>
+        <button class="operator" data-key="*">×</button>
+
+        <button data-key="4">4</button>
+        <button data-key="5">5</button>
+        <button data-key="6">6</button>
+        <button class="operator" data-key="-">−</button>
+
+        <button data-key="1">1</button>
+        <button data-key="2">2</button>
+        <button data-key="3">3</button>
+        <button class="operator" data-key="+">+</button>
+
+        <button data-key="sign" aria-label="Change sign">±</button>
+        <button data-key="0">0</button>
+        <button data-key=".">.</button>
+        <button class="equals" data-key="=">=</button>
+      </div>
+    </div>
+
+    <p>Use your keyboard or click the buttons.</p>
+    <p class="hint">Enter = Calculate · Esc = Clear · Backspace = Delete</p>
+    <section class="history-panel">
+  <div class="history-header">
+    <h2>Calculation History</h2>
+    <button id="clear-history" type="button">Clear History</button>
+  </div>
+
+  <p id="empty-history">No calculations yet.</p>
+  <ul id="history-list"></ul>
+</section>
+  </main>
+
+</body>
+</html>
