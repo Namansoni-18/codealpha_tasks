@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Photo Gallery</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo-area">
+            <div class="logo">📸</div>
+
+            <div>
+                <h1>My Photo Gallery</h1>
+                <p>Your personal photo & video collection</p>
+            </div>
+        </div>
+
+        <div class="header-actions">
+            <button id="themeButton" class="header-button">
+                🌙
+            </button>
+
+            <button id="privateHeaderButton" class="header-button">
+                🔒 Private
+            </button>
+        </div>
+
+    </header>
+
+
+    <!-- MAIN LAYOUT -->
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <h3>MY LIBRARY</h3>
+
+            <button class="filter-btn active" data-category="all">
+                🏠
+                <span>All Photos</span>
+            </button>
+
+            <button class="filter-btn" data-category="favorites">
+                ❤️
+                <span>Favorites</span>
+            </button>
+
+            <button class="filter-btn" data-category="videos">
+                🎬
+                <span>Videos</span>
+            </button>
+
+            <button class="filter-btn" data-category="nature">
+                🌿
+                <span>Nature</span>
+            </button>
+
+            <button class="filter-btn" data-category="city">
+                🏙️
+                <span>City</span>
+            </button>
+
+            <button class="filter-btn" data-category="people">
+                👤
+                <span>People</span>
+            </button>
+
+
+            <h3 class="sidebar-title">SPECIAL</h3>
+
+            <button class="filter-btn" data-category="private">
+                🔐
+                <span>Private Folder</span>
+            </button>
+
+            <button class="filter-btn" data-category="deleted">
+                🗑️
+                <span>Recently Deleted</span>
+            </button>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="storage-box">
+
+                    <div class="storage-title">
+                        <span>Storage</span>
+                        <span>68%</span>
+                    </div>
+
+                    <div class="storage-bar">
+                        <div class="storage-progress"></div>
+                    </div>
+
+                    <small>6.8 GB of 10 GB used</small>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main>
+
+            <!-- TOP CONTROLS -->
+            <div class="top-controls">
+
+                <div>
+                    <h2 id="pageTitle">All Photos</h2>
+                    <p id="photoCount">0 items</p>
+                </div>
+
+
+                <div class="controls">
+
+                    <div class="search-box">
+
+                        <span>🔍</span>
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search photos..."
+                        >
+
+                    </div>
+
+
+                    <select id="sortSelect">
+
+                        <option value="default">
+                            Sort: Default
+                        </option>
+
+                        <option value="name">
+                            Name
+                        </option>
+
+                        <option value="type">
+                            Type
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- GALLERY -->
+            <section class="gallery" id="gallery">
+
+                <!-- JavaScript will create gallery items here -->
+
+            </section>
+
+
+            <!-- EMPTY MESSAGE -->
+            <div class="empty-message" id="emptyMessage">
+
+                <div class="empty-icon">📂</div>
+
+                <h2>No items found</h2>
+
+                <p>
+                    There are no photos or videos in this section.
+                </p>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+
+        <button class="lightbox-close" id="closeLightbox">
+            ✕
+        </button>
+
+
+        <button class="lightbox-arrow previous" id="previousButton">
+            ❮
+        </button>
+
+
+        <div class="lightbox-content">
+
+            <img
+                id="lightboxImage"
+                src=""
+                alt="Preview"
+            >
+
+
+            <video
+                id="lightboxVideo"
+                controls
+                playsinline
+            >
+                <source id="lightboxVideoSource" src="">
+                Your browser does not support video.
+            </video>
+
+
+            <div class="lightbox-info">
+
+                <h3 id="lightboxTitle">
+                    Photo
+                </h3>
+
+                <p id="lightboxCounter">
+                    1 / 1
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button class="lightbox-arrow next" id="nextButton">
+            ❯
+        </button>
+
+    </div>
+
+
+    <!-- PASSWORD MODAL -->
+    <div class="password-modal" id="passwordModal">
+
+        <div class="password-box">
+
+            <div class="lock-icon">
+                🔐
+            </div>
+
+            <h2>Private Folder</h2>
+
+            <p>
+                Enter your password to continue.
+            </p>
+
+            <input
+                type="password"
+                id="privatePassword"
+                placeholder="Enter password"
+            >
+
+            <p
+                class="password-error"
+                id="passwordError"
+            >
+                Incorrect password
+            </p>
+
+            <div class="password-buttons">
+
+                <button
+                    class="cancel-button"
+                    id="cancelPassword"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    class="unlock-button"
+                    id="unlockPassword"
+                >
+                    Unlock
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
