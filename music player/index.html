@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Music Player</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <header class="header">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                🎵
+            </div>
+
+            <div>
+                <h1>My Music</h1>
+
+                <p>
+                    Your personal music player
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="header-actions">
+
+            <button
+                class="header-btn"
+                id="shuffleHeader"
+                title="Shuffle"
+            >
+                🔀
+            </button>
+
+            <button
+                class="header-btn"
+                id="themeButton"
+                title="Change Theme"
+            >
+                🌙
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================================
+         MAIN LAYOUT
+    ================================= -->
+
+    <div class="main-layout">
+
+
+        <!-- ================================
+             SIDEBAR
+        ================================= -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-heading">
+                LIBRARY
+            </div>
+
+
+            <button
+                class="menu-button active"
+                id="allSongsButton"
+            >
+                <span>🎵</span>
+                <span>All Songs</span>
+
+                <span
+                    class="song-count"
+                    id="allSongCount"
+                >
+                    0
+                </span>
+            </button>
+
+
+            <button
+                class="menu-button"
+                id="favoritesButton"
+            >
+                <span>❤️</span>
+                <span>Favorites</span>
+            </button>
+
+
+            <button
+                class="menu-button"
+                id="recentButton"
+            >
+                <span>🕘</span>
+                <span>Recently Played</span>
+            </button>
+
+
+            <div class="sidebar-heading special-heading">
+                PLAYLIST
+            </div>
+
+
+            <button
+                class="menu-button"
+                id="playlistButton"
+            >
+                <span>📃</span>
+                <span>My Playlist</span>
+            </button>
+
+
+            <!-- SIDEBAR BOTTOM -->
+
+            <div class="sidebar-bottom">
+
+                <div class="music-tip">
+
+                    <div class="tip-icon">
+                        🎧
+                    </div>
+
+                    <h3>
+                        Music Tip
+                    </h3>
+
+                    <p>
+                        Use headphones for the best
+                        listening experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================================
+             CONTENT
+        ================================= -->
+
+        <main class="content">
+
+
+            <!-- TOP BAR -->
+
+            <div class="top-bar">
+
+                <div>
+
+                    <h2 id="pageTitle">
+                        All Songs
+                    </h2>
+
+                    <p id="pageSubtitle">
+                        Listen to your favorite music
+                    </p>
+
+                </div>
+
+
+                <div class="search-container">
+
+                    <span>
+                        🔍
+                    </span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search songs..."
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================
+                 PLAYER
+            ================================= -->
+
+            <section class="player-card">
+
+
+                <!-- ALBUM ART -->
+
+                <div class="album-section">
+
+                    <div
+                        class="album-art"
+                        id="albumArt"
+                    >
+
+                        <img
+                            id="albumImage"
+                            src="https://picsum.photos/id/1011/600/600"
+                            alt="Album Cover"
+                        >
+
+                        <div class="vinyl">
+                            ●
+                        </div>
+
+                    </div>
+
+
+                    <div class="now-playing-label">
+                        NOW PLAYING
+                    </div>
+
+                </div>
+
+
+                <!-- PLAYER DETAILS -->
+
+                <div class="player-details">
+
+
+                    <div class="song-details">
+
+                        <div>
+
+                            <h2 id="songTitle">
+                                Dreamscape
+                            </h2>
+
+                            <p id="artistName">
+                                SoundHelix
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="favorite-main"
+                            id="favoriteMain"
+                            title="Favorite"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+
+                    <!-- PROGRESS -->
+
+                    <div class="progress-area">
+
+                        <span id="currentTime">
+                            0:00
+                        </span>
+
+                        <input
+                            type="range"
+                            id="progressBar"
+                            min="0"
+                            max="100"
+                            value="0"
+                        >
+
+                        <span id="totalTime">
+                            0:00
+                        </span>
+
+                    </div>
+
+
+                    <!-- MAIN CONTROLS -->
+
+                    <div class="main-controls">
+
+
+                        <button
+                            class="control-button small"
+                            id="shuffleButton"
+                            title="Shuffle"
+                        >
+                            🔀
+                        </button>
+
+
+                        <button
+                            class="control-button"
+                            id="previousButton"
+                            title="Previous"
+                        >
+                            ⏮
+                        </button>
+
+
+                        <button
+                            class="play-button"
+                            id="playButton"
+                            title="Play"
+                        >
+                            ▶
+                        </button>
+
+
+                        <button
+                            class="control-button"
+                            id="nextButton"
+                            title="Next"
+                        >
+                            ⏭
+                        </button>
+
+
+                        <button
+                            class="control-button small"
+                            id="repeatButton"
+                            title="Repeat"
+                        >
+                            🔁
+                        </button>
+
+                    </div>
+
+
+                    <!-- VOLUME -->
+
+                    <div class="bottom-controls">
+
+
+                        <div class="volume-area">
+
+                            <button
+                                class="volume-button"
+                                id="muteButton"
+                            >
+                                🔊
+                            </button>
+
+                            <input
+                                type="range"
+                                id="volumeBar"
+                                min="0"
+                                max="1"
+                                step="0.01"
+                                value="0.8"
+                            >
+
+                        </div>
+
+
+                        <button
+                            class="autoplay-button active"
+                            id="autoplayButton"
+                        >
+                            ▶ Autoplay
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================
+                 PLAYLIST
+            ================================= -->
+
+            <section class="playlist-section">
+
+
+                <div class="playlist-header">
+
+                    <div>
+
+                        <h2>
+                            Your Playlist
+                        </h2>
+
+                        <p id="playlistSubtitle">
+                            Songs available to play
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="clear-button"
+                        id="clearSearchButton"
+                    >
+                        Clear Search
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="playlist"
+                    id="playlist"
+                >
+
+                    <!-- JavaScript creates songs here -->
+
+                </div>
+
+
+                <!-- EMPTY MESSAGE -->
+
+                <div
+                    class="empty-playlist"
+                    id="emptyPlaylist"
+                >
+
+                    <div>
+                        🎵
+                    </div>
+
+                    <h3>
+                        No songs found
+                    </h3>
+
+                    <p>
+                        Try searching for another song.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================================
+         AUDIO
+    ================================= -->
+
+    <audio
+        id="audioPlayer"
+        preload="metadata"
+    >
+    </audio>
+
+
+    <!-- ================================
+         JAVASCRIPT
+    ================================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
